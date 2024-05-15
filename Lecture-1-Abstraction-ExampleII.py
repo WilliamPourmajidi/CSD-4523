@@ -37,6 +37,7 @@ class PaymentProcessor:
         return "PayPal processed"
 
 # Usage
+
 # Create an instance of PaymentProcessor with specified payment data.
 payment_processor = PaymentProcessor({'type': 'credit', 'amount': 100})
 # Call the process_payment method and print the result.
