@@ -15,6 +15,7 @@ class PaymentProcessor:
             return self._process_paypal()
 
     # Private method to validate if all required fields are present.
+
     def _validate_payment(self):
         # List of required fields for the payment process.
         required_fields = ['type', 'amount']
