@@ -43,3 +43,4 @@ class PaymentProcessor:
 payment_processor = PaymentProcessor({'type': 'credit', 'amount': 100})
 # Call the process_payment method and print the result.
 print(payment_processor.process_payment())
+
