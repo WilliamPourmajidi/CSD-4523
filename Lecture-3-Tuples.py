@@ -2,7 +2,7 @@
 
 # 1. Creating a tuple
 # Tuples are created using parentheses ()
-fruits = ("apple", "banana", "cherry")
+fruits = ("apple", "cherry", "banana")
 print(f"Initial tuple of fruits: {fruits}")
 
 # 2. Accessing elements
@@ -16,7 +16,7 @@ print(f"Last fruit: {last_fruit}")
 # 3. Slicing a tuple
 # Tuples can be sliced to get a subset of elements
 some_fruits = fruits[1:3]
-print(f"Sliced tuple (from index 1 to 3): {some_fruits}")
+print(f"Sliced tuple (from index 1 to 3 -- note that it gives us index 1 and 2, so 3 is not included! ): {some_fruits}")
 
 # 4. Iterating through a tuple
 # Tuples can be iterated over using a for loop
@@ -27,6 +27,8 @@ for fruit in fruits:
 # 5. Unpacking a tuple
 # Tuples can be unpacked into individual variables
 (a, b, c) = fruits
+print(type(fruits))
+
 print(f"Unpacked tuple: a = {a}, b = {b}, c = {c}")
 
 # 6. Nested tuples
@@ -37,7 +39,7 @@ print(f"Nested tuple: {nested_tuple}")
 # 7. Immutable nature of tuples
 # Tuples are immutable, meaning their elements cannot be changed after creation
 # The following line would raise an error:
-# fruits[0] = "blueberry"  # Uncommenting this line will cause a TypeError
+# fruits[0] = "watermelon"  # Uncommenting this line will cause a TypeError
 
 # 8. Tuple methods
 # Tuples have only two built-in methods: count() and index()

@@ -5,11 +5,11 @@ age = my_dict['age']  # Outputs: 25
 # Modifying Dictionaries:
 my_dict['age'] = 26  # Updates age to 26
 
-
 # Dictionary Operations in Python
-
 # 1. Creating a dictionary
 # Create a dictionary with initial key-value pairs
+
+
 student = {
     "id": 1,
     "name": "Alice Johnson",
@@ -33,6 +33,7 @@ name = student["name"]
 print(f"Student's name: {name}")
 # Output: Student's name: Alice Johnson
 
+
 math_grade = student["grades"]["math"]
 print(f"Math grade: {math_grade}")
 # Output: Math grade: 90
@@ -51,10 +52,10 @@ print(student["grades"]["science"])
 
 # 4. Adding elements
 # Add new key-value pairs
-student["email"] = "alice.johnson@example.com"
+student["email"] = "alice.johnson@mycollege.com"
 print("Added email:")
 print(student["email"])
-# Output: alice.johnson@example.com
+# Output: alice.johnson@mycollege.com
 
 student["grades"]["history"] = 92
 print("Added history grade:")
@@ -63,15 +64,24 @@ print(student["grades"]["history"])
 
 # 5. Removing elements
 # Remove key-value pairs using pop()
+# Let's print our dictionary so we see what we have so far
+
+print("--before------------")
+print(student)
+print("-------------------")
+
 removed_age = student.pop("age")
-print("Removed age:")
-print(removed_age)
-# Output: 21
+print("Removed age")
+print(f"Removed age {removed_age}")
+
 
 removed_email = student.pop("email")
 print("Removed email:")
 print(removed_email)
-# Output: alice.johnson@example.com
+print("--after-------------")
+print(student)
+print("-------------------")
+
 
 # Remove key-value pairs using del
 del student["grades"]["literature"]
@@ -103,7 +113,7 @@ for value in student.values():
 # Iterate over key-value pairs
 print("Key-value pairs in the dictionary:")
 for key, value in student.items():
-    print(f"{key}: {value}")
+    print(f"Here is the key: {key} and its value is {value}")
 # Output:
 # id: 1
 # name: Alice Johnson
