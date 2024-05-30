@@ -10,6 +10,9 @@ print(f"Initial tuple of fruits: {fruits}")
 first_fruit = fruits[0]
 print(f"First fruit: {first_fruit}")
 
+last_fruit = fruits[-2]
+print(f"Last fruit: {last_fruit}")
+
 # 3. Slicing a tuple
 # Tuples can be sliced to get a subset of elements
 some_fruits = fruits[1:3]
