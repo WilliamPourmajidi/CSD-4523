@@ -1,6 +1,7 @@
 # main.py
 import my_module
 
+
 # Using the greet function from my_module
 greeting = my_module.greet("William",42)
 print(greeting)  # Output: Hello, Alice!
