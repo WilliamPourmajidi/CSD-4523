@@ -27,7 +27,7 @@ class BankAccount:
             logging.error("Insufficient funds")
             return
         self.balance -= amount
-        logging.info(f"Withdrew {amount}, new balance is CAD${self.balance}")
+        logging.info(f"Withdrew {amount}, new balance is {self.currency} {self.balance}")
 
     def timed_withdraw(self, amount, timeout):
         def perform_withdraw():
