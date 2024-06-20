@@ -16,10 +16,10 @@ def load_file(file_path):
         return None
 
 # Attempt to load a file
-file_path = 'example.txt'
+file_path = 'my_file.txt'
 file_data = load_file(file_path)
 
 if file_data is not None:
-    print(file_data)
+    print(f"here is the content of the {file_path}\n {file_data}")
 else:
     print(f"Failed to load the file: {file_path}")
