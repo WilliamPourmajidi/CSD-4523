@@ -4,7 +4,7 @@ conn = sqlite3.connect('example.db')
 cursor = conn.cursor()
 
 cursor.execute('''
-    UPDATE students
+    UPDATE python_students
     SET grade = 'B'
     WHERE name = 'William'
 ''')
