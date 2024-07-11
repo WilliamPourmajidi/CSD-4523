@@ -6,8 +6,8 @@ def connect_to_mysql():
     # Establishing a connection to the MySQL server
     connection = mysql.connector.connect(
         host="localhost",  # Replace with your MySQL server host
-        user="your_username",  # Replace with your MySQL username
-        password="your_password"  # Replace with your MySQL password
+        user="root",  # Replace with your MySQL username
+        password="william"  # Replace with your MySQL password
     )
     return connection
 
@@ -95,43 +95,44 @@ def delete_student(connection, student_id):
 
 # Main function to demonstrate the complete workflow
 def main():
-    # Connect to MySQL server
+    #1- Connect to MySQL server
     connection = connect_to_mysql()
 
-    # List current databases
+    #2- List current databases
     list_databases(connection)
 
-    # Create a new database
-    db_name = "college"
-    create_database(connection, db_name)
-
-    # Connect to the new database
-    connection.close()
-    connection = connect_to_database(db_name)
-
-    # Create a new table in the database
-    create_table(connection)
-
-    # Insert a new student (Create operation)
-    insert_student(connection, "John Doe", 20, "Computer Science")
-
-    # Read and display current students (Read operation)
-    read_students(connection)
-
-    # Update a student's major (Update operation)
-    update_student_major(connection, 1, "Software Engineering")
-
-    # Read and display updated students
-    read_students(connection)
-
-    # Delete a student (Delete operation)
-    delete_student(connection, 1)
-
-    # Read and display students after deletion
-    read_students(connection)
-
-    # Close the database connection
-    connection.close()
+    # #3- Create a new database
+    # db_name = "college"
+    # create_database(connection, db_name)
+    #
+    # #4- (18th of July 2024)  Connect to the new database
+    # connection.close()
+    # connection = connect_to_database(db_name)
+    #
+    # # Create a new table in the database
+    # create_table(connection)
+    #
+    # # Insert a new student (Create operation)
+    # insert_student(connection, "John Doe", 20, "Computer Science")
+    #
+    # # Read and display current students (Read operation)
+    # read_students(connection)
+    #
+    # # Update a student's major (Update operation)
+    # update_student_major(connection, 1, "Software Engineering")`
+    #
+    # # Read and display updated students
+    # read_students(connection)
+    #
+    # # Delete a student (Delete operation)
+    # delete_student(connection, 1)
+    #
+    # # Read and display students after deletion
+    # read_students(connection)
+    #
+    # # Close the database connection
+    # connection.close()
 
 if __name__ == "__main__":
+    print("WOw this is cool!")
     main()
