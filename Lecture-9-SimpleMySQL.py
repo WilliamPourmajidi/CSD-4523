@@ -1,9 +1,8 @@
-# Importing the necessary libraries
 import mysql.connector
 
-# Function to connect to MySQL database
+
+# Connection to MySQL
 def connect_to_mysql():
-    # Establishing a connection to the MySQL server
     connection = mysql.connector.connect(
         host="localhost",  # Replace with your MySQL server host
         user="root",  # Replace with your MySQL username
@@ -11,32 +10,63 @@ def connect_to_mysql():
     )
     return connection
 
-# Function to list current databases
-def list_databases(connection):
-    cursor = connection.cursor()
-    cursor.execute("SHOW DATABASES")
-    databases = cursor.fetchall()
-    print("Current databases:")
-    for db in databases:
-        print(db[0])
-    cursor.close()
 
-# Function to create a new database
+def list_existing_databases(connection):
+    """
+    Function that takes a connection and shows all the databases in it
+    :param connection:
+    :return:
+    """
+    cursor = connection.cursor()
+    cursor.execute("SHOW DATABASES")  # This is a SQL command to list all databases
+    databases = cursor.fetchall()
+    print(databases)
+
+
+# LISTING ALL THE DATABASES
+# The following two lines are exactly doing the same thing as list_existing_databases(connect_to_mysql())
+db_connection = connect_to_mysql()
+list_existing_databases(db_connection)
+
+
 def create_database(connection, db_name):
     cursor = connection.cursor()
     cursor.execute(f"CREATE DATABASE IF NOT EXISTS {db_name}")
-    cursor.close()
-    print(f"Database '{db_name}' created successfully.")
+    #     cursor.close()
+    databases = cursor.fetchall()
+    print(databases)
+
+
+db_connection = connect_to_mysql()
+create_database(db_connection, "william2024")
+
 
 # Function to connect to a specific database
 def connect_to_database(db_name):
     connection = mysql.connector.connect(
         host="localhost",
-        user="your_username",
-        password="your_password",
+        user="root",
+        password="william",
         database=db_name
     )
     return connection
+
+
+# connect to the database
+db_connect = connect_to_database("william2024")
+
+
+# Show the existing tables
+
+def show_table(connection):
+    cursor = connection.cursor()
+    cursor.execute("SHOW TABLES")
+    tables = cursor.fetchall()
+    print(f"Here are the tables  {tables}")
+
+
+show_table(db_connect)
+
 
 # Function to create a new table
 def create_table(connection):
@@ -53,6 +83,10 @@ def create_table(connection):
     cursor.close()
     print("Table 'students' created successfully.")
 
+# Adding a table to a databsae
+create_table(db_connect)
+
+
 # Function to perform a Create operation
 def insert_student(connection, name, age, major):
     cursor = connection.cursor()
@@ -62,6 +96,13 @@ def insert_student(connection, name, age, major):
     connection.commit()
     cursor.close()
     print(f"Student '{name}' inserted successfully.")
+
+# insert_student(db_connect,"Pranav",20,"FullStack Developer")
+# insert_student(db_connect,"John",22,"FullStack Developer")
+# insert_student(db_connect,"Elon",24,"FullStack Developer")
+# insert_student(db_connect,"Bill",25,"FullStack Developer")
+
+
 
 # Function to perform a Read operation
 def read_students(connection):
@@ -73,6 +114,9 @@ def read_students(connection):
         print(row)
     cursor.close()
 
+read_students(db_connect)
+
+
 # Function to perform an Update operation
 def update_student_major(connection, student_id, new_major):
     cursor = connection.cursor()
@@ -82,6 +126,12 @@ def update_student_major(connection, student_id, new_major):
     connection.commit()
     cursor.close()
     print(f"Student ID '{student_id}' updated successfully.")
+
+
+update_student_major(db_connect, 36, "SpaceX and Tesla")
+
+
+
 
 # Function to perform a Delete operation
 def delete_student(connection, student_id):
@@ -93,45 +143,4 @@ def delete_student(connection, student_id):
     cursor.close()
     print(f"Student ID '{student_id}' deleted successfully.")
 
-# Main function to demonstrate the complete workflow
-def main():
-    #1- Connect to MySQL server
-    connection = connect_to_mysql()
-
-    #2- List current databases
-    list_databases(connection)
-
-    # #3- Create a new database
-    db_name = "college"
-    create_database(connection, db_name)
-
-    # #4-Connect to the new database
-    connection.close()
-    connection = connect_to_database(db_name)
-    #
-    # # Create a new table in the database
-    create_table(connection)
-    #
-    # # Insert a new student (Create operation)
-    insert_student(connection, "John Doe", 20, "Computer Science")
-
-    # # Read and display current students (Read operation)
-    read_students(connection)
-    #
-    # # Update a student's major (Update operation)
-    update_student_major(connection, 1, "Software Engineering")`
-    #
-    # # Read and display updated students
-    read_students(connection)
-    #
-    # # Delete a student (Delete operation)
-    delete_student(connection, 1)
-    #
-    # # Read and display students after deletion
-    read_students(connection)
-    #
-    # # Close the database connection
-    connection.close()
-
-if __name__ == "__main__":
-    main()
+delete_student(db_connect, 37)
