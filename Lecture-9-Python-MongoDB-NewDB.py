@@ -3,7 +3,7 @@ from pymongo.server_api import ServerApi
 import os
 
 username = "root"
-pw = ""
+pw = "password"
 
 uri = f"mongodb+srv://{username}:{pw}@cluster0.nwjumor.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
