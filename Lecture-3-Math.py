@@ -19,3 +19,7 @@ print(f"Factorial of 5 is {factorial_value}")
 # Calculate the greatest common divisor of two numbers
 gcd_value = math.gcd(54, 24)
 print(f"Greatest Common Divisor of 54 and 24 is {gcd_value}")
+
+#raise a value to a power  (9^2)
+raised_power = math.pow(9,2)
+print(raised_power)
