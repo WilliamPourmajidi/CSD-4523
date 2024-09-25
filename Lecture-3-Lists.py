@@ -60,3 +60,8 @@ print(f"Sliced list {some_fruits}")
 print("Looping through the list of fruits:")
 for fruit in my_new_fruits:
     print(fruit)
+
+
+interesting_list = ["William", "Pourmajidi", 42, 3.14]
+for item in interesting_list:
+    print(f"Here is our item {item} and is of type {type(item)}")
