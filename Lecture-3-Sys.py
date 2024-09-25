@@ -1,5 +1,6 @@
 import sys
 
+
 # Get the version of Python interpreter
 python_version = sys.version
 print(f"Python Version: {python_version}")

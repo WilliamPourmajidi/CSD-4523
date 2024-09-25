@@ -1,5 +1,5 @@
 from django.http import HttpResponse
 
-def index(request):
-    # This is the view function for the index page
-    return HttpResponse("Hello, world! This is my first Django app.")
+def hello_world(request):
+    # This function will handle the HTTP request and return a response.
+    return HttpResponse("Hello, World! I am coming to your from the world of Django!!!")

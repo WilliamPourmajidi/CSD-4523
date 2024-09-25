@@ -67,42 +67,6 @@
 # account.withdraw(150)
 #
 
-## Inheritance Simple Examples
-# class Vehicle:
-#     def __init__(self, brand, model):
-#         self.brand = brand
-#         self.model = model
-#
-# class Car(Vehicle):
-#     pass
-#
-# # Usage
-# my_car = Car("Toyota", "Corolla")
-# print(my_car.brand, my_car.model)
-#
-
-## Inheritance Intermediate Examples
-# class Vehicle:
-#     def __init__(self, brand, model):
-#         self.brand = brand
-#         self.model = model
-#
-#     def start(self):
-#         print("Engine started")
-#
-# class Car(Vehicle):
-#     def __init__(self, brand, model, horsepower):
-#         super().__init__(brand, model)
-#         self.horsepower = horsepower
-#
-#     def start(self):
-#         super().start()
-#         print(f"{self.model} with {self.horsepower} horsepower engine started")
-#
-# # Usage
-# my_car = Car("Honda", "Civic", 180)
-# my_car.start()
-
 ## Inheritance Advance Examples
 class Vehicle:
     def __init__(self, brand, model):

@@ -16,7 +16,6 @@ def draw_shape(shape):
 
 # Usage
 shapes = [Circle(), Square()]
-print(f"Length of our shape list: {len(shapes)}")
-print(type(shapes))
+
 for shape in shapes:
     draw_shape(shape)

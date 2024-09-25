@@ -14,8 +14,15 @@ class Cat(Animal):
 
 def make_sound(animal):
     animal.sound()
-#
+
 # # Usage
-animals = [Dog(), Cat()]
+# instantiation of objects
+my_dog = Dog()
+my_cat = Cat()
+
+# putting objects in a list
+animals = [my_dog, my_cat]
+
+#passing elements of objects to make_sound function
 for animal in animals:
     make_sound(animal)
