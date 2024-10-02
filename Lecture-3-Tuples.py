@@ -10,7 +10,7 @@ print(f"Initial tuple of fruits: {fruits}")
 first_fruit = fruits[0]
 print(f"First fruit: {first_fruit}")
 
-last_fruit = fruits[-2]
+last_fruit = fruits[-1]
 print(f"Last fruit: {last_fruit}")
 
 # 3. Slicing a tuple
@@ -24,22 +24,26 @@ print("Looping through the tuple of fruits:")
 for fruit in fruits:
     print(fruit)
 
+
+
 # 5. Unpacking a tuple
 # Tuples can be unpacked into individual variables
-(a, b, c) = fruits
 print(type(fruits))
+(a, b, c) = fruits
+
 
 print(f"Unpacked tuple: a = {a}, b = {b}, c = {c}")
 
 # 6. Nested tuples
 # Tuples can contain other tuples as elements
-nested_tuple = (fruits, ("date", "elderberry"))
+nested_tuple = (fruits, ("orange", "blueberry"))
 print(f"Nested tuple: {nested_tuple}")
 
 # 7. Immutable nature of tuples
 # Tuples are immutable, meaning their elements cannot be changed after creation
 # The following line would raise an error:
 # fruits[0] = "watermelon"  # Uncommenting this line will cause a TypeError
+
 
 # 8. Tuple methods
 # Tuples have only two built-in methods: count() and index()

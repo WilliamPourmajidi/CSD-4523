@@ -1,4 +1,5 @@
 # Lists in Python
+print("after", sample_list)
 
 # 1. Creating a list
 # Lists are created using square brackets []
