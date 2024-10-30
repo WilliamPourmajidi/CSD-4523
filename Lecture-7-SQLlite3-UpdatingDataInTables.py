@@ -5,9 +5,11 @@ cursor = conn.cursor()
 
 cursor.execute('''
     UPDATE python_students
-    SET grade = 'B'
+    SET grade = 'C'
     WHERE name = 'William'
 ''')
+
+
 
 conn.commit()
 conn.close()

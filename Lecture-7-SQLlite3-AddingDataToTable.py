@@ -5,7 +5,7 @@ cursor = conn.cursor()
 
 cursor.execute('''
     INSERT INTO python_students (name, age, grade)
-    VALUES ('William', 42, 'A')
+    VALUES ('William', 42, 'A+')
 ''')
 
 conn.commit()
