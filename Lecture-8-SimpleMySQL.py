@@ -33,7 +33,7 @@ def create_database(connection, db_name):
 
 
 db_connection = connect_to_mysql()
-create_database(db_connection, "tiberio2024")
+create_database(db_connection, "USA2024")
 
 # # LISTING ALL THE DATABASES
 # # The following two lines are exactly doing the same thing as list_existing_databases(connect_to_mysql())
