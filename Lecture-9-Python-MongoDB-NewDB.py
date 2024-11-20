@@ -3,9 +3,10 @@ from pymongo.server_api import ServerApi
 import os
 
 username = "root"
-pw = "password"
+pw = "password2024"
 
-uri = f"mongodb+srv://{username}:{pw}@cluster0.nwjumor.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+uri = f"mongodb+srv://{username}:{pw}@cluster0.nnbhz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+
 
 # Create a new client and connect to the server
 client = MongoClient(uri, server_api=ServerApi('1'))
@@ -16,6 +17,7 @@ try:
     print("Pinged your deployment. You successfully connected to MongoDB Cluster!")
 except Exception as e:
     print(e)
+
 
 print("*****************CREATE****************** \n")
 # use a database named "myDatabase"
@@ -41,6 +43,8 @@ try:
 except pymongo.errors.OperationFailure:
     print("An authentication error was received. Are your username and password correct in your connection string?")
     sys.exit(1)
+
+
 
 # INSERT DOCUMENTS (Create - remember C from CRUD?)
 # You can insert individual documents using collection.insert_one().
@@ -105,13 +109,15 @@ print("*****************UPDATE****************** \n")
 # Note the 'new=True' option: if omitted, find_one_and_update returns the
 # original document instead of the updated one.
 #
-my_doc = my_collection.find_one_and_update({"ingredients": "potato"}, {"$set": {"prep_time": 65}}, new=True)
+my_doc = my_collection.find_one_and_update({"ingredients": "potato"}, {"$set": {"prep_time": 75}}, new=True)
 if my_doc is not None:
     print("Here's the updated recipe:")
     print(my_doc)
 else:
     print("I didn't find any recipes that contain 'potato' as an ingredient.")
 print("\n")
+
+
 
 print("*****************DELETE****************** \n")
 # DELETE DOCUMENTS
@@ -125,9 +131,9 @@ print("*****************DELETE****************** \n")
 # The query filter passed to delete_many uses $or to look for documents
 # in which the "name" field is either "elotes" or "fried rice".
 
-my_result = my_collection.delete_many({"$or": [{"name": "Meal#4"}, {"name": "fried rice"}]})
-print("I deleted %x records." % (my_result.deleted_count))
-print("\n")
+# my_result = my_collection.delete_many({"$or": [{"name": "Meal#4"}, {"name": "Meal#2"}]})
+# print("I deleted %x records." % (my_result.deleted_count))
+# print("\n")
 
 
 
